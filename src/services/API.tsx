@@ -1,11 +1,14 @@
-import React from 'react';
+export enum Difficulty {
+	EASY = 'easy',
+	MED = 'medium',
+	HARD = 'hard',
+}
 
-const API = () => {
-	return (
-		<div>
-			URL de la API: https://opentdb.com/api.php?amount=10“&amp;”type=multiple
-		</div>
-	);
+export const fetchQuizQuestions = async (
+	amount: number,
+	difficulty: Difficulty
+) => {
+	const endpoint = `https://opentdb.com/api.php?amount=${amount}&difficulty=${difficulty}&type=multiple`;
+	const data = await (await fetch(endpoint)).json();
+	console.log(data);
 };
-
-export default API;
