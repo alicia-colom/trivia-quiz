@@ -25,7 +25,6 @@ export const Wrapper = styled.div`
   max-width: 80vw;
 	border-radius: 20px;
 	padding: 0 20px 20px 20px;
-	/* background-color: rgba(255, 255, 255, 0.1); */
   text-align: center;
   color: #212121;
   @media (max-width: 600px) {
