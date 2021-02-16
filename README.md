@@ -4,8 +4,13 @@
 
 
 ### Tech stack: 
--> ReactJS
--> TypeScript 
--> API REST [Open Trivia Database](https://opentdb.com/)
--> Styled-components
--> JSX
+
+>> ReactJS
+>
+>> TypeScript 
+>
+>> API REST [Open Trivia Database](https://opentdb.com/)
+>
+>> Styled-components
+>
+>> JSX
