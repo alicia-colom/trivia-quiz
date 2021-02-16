@@ -45,21 +45,30 @@ function App() {
 	return (
 		<>
 			<h1>Take the Quiz</h1>
-			<button className="start" onClick={startTrivia}>
-				Start quiz
-			</button>
-			<p className="score">Your score:</p>
-			<p className="loadingQuestion">Loading questions...</p>
-			{/* <QuestionCard
-				questionNumber={number + 1}
-				totalQuestions={TOTAL_QUESTIONS}
-				question={questions[number].question}
-				answers={questions[number].answers}
-				userAnswer={userAnswers ? userAnswers[number] : undefined}
-				callback={checkAnswer}
-			/> */}
+
+			{gameOver || userAnswers.length === TOTAL_QUESTIONS ? (
+				<button className="start" onClick={startTrivia}>
+					Start quiz
+				</button>
+			) : null}
+
+			{gameOver ? null : <p className="score">Your score:</p>}
+
+			{loading && <p className="loadingQuestion">Loading questions...</p>}
+
+			{!loading && !gameOver && (
+				<QuestionCard
+					questionNumber={number + 1}
+					totalQuestions={TOTAL_QUESTIONS}
+					question={questions[number].question}
+					answers={questions[number].answers}
+					userAnswer={userAnswers ? userAnswers[number] : undefined}
+					callback={checkAnswer}
+				/>
+			)}
+
 			<button className="next" onClick={nextQuestion}>
-				Go to next question
+				Next question
 			</button>
 		</>
 	);
